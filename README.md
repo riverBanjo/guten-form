@@ -1,2 +1,2 @@
-# guten-form
+# Guten Form
 A WordPress Gutenberg Form Builder
