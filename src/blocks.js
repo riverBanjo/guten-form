@@ -11,3 +11,4 @@
 
 import './block/block.js';
 import './form/form.js';
+import './single-line-text/single-line-text.js';
