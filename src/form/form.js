@@ -7,6 +7,8 @@
 //  Import CSS.
 import './editor.scss';
 import './style.scss';
+import { InnerBlocks } from '@wordpress/block-editor';
+
 
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.blocks
@@ -50,18 +52,10 @@ registerBlockType( 'guf/form', {
 		// Creates a <p class='wp-block-cgb-block-guten-form'></p>.
 		return (
 			<div className={ props.className }>
-				<p>— Hello from the backend.</p>
-				<p>
-					CGB BLOCK: <code>guten-form</code> is a new Gutenberg block
-				</p>
-				<p>
-					It was created via{ ' ' }
-					<code>
-						<a href="https://github.com/ahmadawais/create-guten-block">
-							create-guten-block
-						</a>
-					</code>.
-				</p>
+				<p>Build Your Form Below</p>
+				<form>
+					<InnerBlocks />
+				</form>
 			</div>
 		);
 	},
@@ -79,20 +73,9 @@ registerBlockType( 'guf/form', {
 	 */
 	save: ( props ) => {
 		return (
-			<div className={ props.className }>
-				<p>— Hello from the frontend.</p>
-				<p>
-					CGB BLOCK: <code>guten-form</code> is a new Gutenberg block.
-				</p>
-				<p>
-					It was created via{ ' ' }
-					<code>
-						<a href="https://github.com/ahmadawais/create-guten-block">
-							create-guten-block
-						</a>
-					</code>.
-				</p>
-			</div>
+			<form className={ props.className }>
+				<InnerBlocks.Content />
+			</form>
 		);
 	},
 } );
