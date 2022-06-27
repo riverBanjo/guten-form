@@ -25,7 +25,7 @@ const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.b
  * @return {?WPBlock}          The block, if it has been successfully
  *                             registered; otherwise `undefined`.
  */
-registerBlockType( 'guf/submit', {
+registerBlockType( 'guf/submit-field', {
 	// Block name : guf/form
 	title: __( 'Submit Button' ),
 	icon: 'forms',
@@ -34,7 +34,6 @@ registerBlockType( 'guf/submit', {
 		__( 'form' ),
 		__( 'feedback' ),
 		__( 'data' ),
-		__( 'button' ),
 	],
 
 	/**
@@ -52,7 +51,7 @@ registerBlockType( 'guf/submit', {
 		// Creates a <p class='wp-block-cgb-block-guten-form'></p>.
 		return (
 			<div className={ props.className }>
-				<input type="submit">Submit</input>
+				<input type="submit" value="Submit" />
 			</div>
 		);
 	},
@@ -71,7 +70,7 @@ registerBlockType( 'guf/submit', {
 	save: ( props ) => {
 		return (
 			<div className={ props.className }>
-				<input type="submit">Submit</input>
+				<input type="submit" value="Submit" />
 			</div>
 		);
 	},
