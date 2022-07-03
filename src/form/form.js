@@ -12,6 +12,7 @@ import { InnerBlocks } from '@wordpress/block-editor';
 
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.blocks
+const ALLOWED_BLOCKS = [ 'guf/single-line-text', 'guf/submit-field', ];
 
 /**
  * Register: a Gutenberg Block.
@@ -54,7 +55,7 @@ registerBlockType( 'guf/form', {
 			<div className={ props.className }>
 				<p>Build Your Form Below</p>
 				<form>
-					<InnerBlocks />
+					<InnerBlocks allowedBlocks={ ALLOWED_BLOCKS }/>
 				</form>
 			</div>
 		);

@@ -35,6 +35,7 @@ registerBlockType( 'guf/submit-field', {
 		__( 'feedback' ),
 		__( 'data' ),
 	],
+	parent: [ 'guf/form', ],
 
 	/**
 	 * The edit function describes the structure of your block in the context of the editor.
