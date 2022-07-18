@@ -73,7 +73,7 @@ registerBlockType( 'guf/single-line-text', {
 		return (
 			<div className={ props.className }>
 				<label>Label</label>
-				<input type="text"></input>
+				<input type="text" name="single-line-text"></input>
 			</div>
 		);
 	},

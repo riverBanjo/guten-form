@@ -74,8 +74,9 @@ registerBlockType( 'guf/form', {
 	 */
 	save: ( props ) => {
 		return (
-			<form className={ props.className }>
+			<form className={ props.className } id={ "guf-form" }>
 				<InnerBlocks.Content />
+				<div id="guf-feedback"></div>
 			</form>
 		);
 	},

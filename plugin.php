@@ -21,3 +21,12 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Block Initializer.
  */
 require_once plugin_dir_path( __FILE__ ) . 'src/init.php';
+
+function guf_POST_assets() {
+	$params = array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) );
+	wp_enqueue_script( 'guf-ajax-script', plugins_url( '/guten-form/src/form-post.js' ), [ 'jquery', ], '1.0.0', true );
+	wp_localize_script( 'guf-ajax-script', 'params', $params );
+}
+
+
+add_action( 'wp_enqueue_scripts', 'guf_POST_assets');
